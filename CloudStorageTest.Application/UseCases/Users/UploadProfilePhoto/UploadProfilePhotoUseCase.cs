@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace CloudStorageTest.Application.UseCases.Users.UploadProfilePhoto;
 
-public class UploadProfilePhotoUseCase
+public class UploadProfilePhotoUseCase : IUploadProfilePhotoUseCase
 
 {
     /*readonly define que apenas o construtor que passa o valor.*/
@@ -15,7 +15,7 @@ public class UploadProfilePhotoUseCase
     /*Comando parar criar construtor: ctor*/
     public UploadProfilePhotoUseCase(IStorageService storageService)
     {
-        _storageService = storageService;   
+        _storageService = storageService;
 
     }
 
@@ -37,14 +37,14 @@ public class UploadProfilePhotoUseCase
     }
 
 
-    private User GetFromDatabase() 
+    private User GetFromDatabase()
     {
         return new User
         {
             Id = 1,
             Name = "Denis",
-            Email = "denis.si2011@gmail.com.."
+            Email = "denis.si2011@gmail.com"
         };
-    
+
     }
 }
